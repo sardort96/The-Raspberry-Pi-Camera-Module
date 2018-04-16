@@ -1,0 +1,51 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}
+    Login
+{% endblock %}
+{% block content %}
+    <nav class="navbar navbar-inverse">
+        <a class="navbar-brand" href="#">Index</a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>See current state</h2>
+                
+                <div class="card-body text-dark">
+                    
+                    <p class="card-text">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Power
+                                <span class="badge badge-primary badge-pill">{% if power == 1 %} On {% else %} Off {% endif %}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Speed
+                                <span class="badge badge-primary badge-pill">{{ speed[0] }}</span>
+                            </li>
+                            
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-6">
+                <form class="form-signin" method="POST" action="/">
+                    <h2 class="form-signin-heading">But sign in to change configurations</h2>
+                    {{ form.hidden_tag() }}
+                    {{ wtf.form_field(form.username) }}
+                    {{ wtf.form_field(form.password) }}
+                    
+                    {% if error %}
+                        <p class="error"><strong>Error:</strong> {{ error }}
+                        {% endif %}
+                        {{ wtf.form_field(form.remember) }}
+                        <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
+                        
+                </form>
+            </div>
+            </div>
+        </div>
+{% endblock %}
