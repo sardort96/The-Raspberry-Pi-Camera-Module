@@ -1,4 +1,4 @@
-# The-Raspberry-Pi-Camera-Module
+# The Raspberry Pi Camera Module as an IoT Device
 Using Flask - a micro web framework in Python for Device Management in the Internet of Things
 ## Designing an Internet of Things device
 This application allows the user to configure how often the device is taking pictures based on the battery life. The user is also able to turn on and off the device remotely and set the frequency of capturing images.
